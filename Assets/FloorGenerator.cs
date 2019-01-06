@@ -19,7 +19,7 @@ public class FloorGenerator : MonoBehaviour {
 
     //ジャンプ台生成確立(%)
     private int jumpRandom = 5;
-    private int speedRandom = 20;
+    private int speedRandom = 50;
 
 	// Use this for initialization
 	void Start () {
@@ -52,6 +52,7 @@ public class FloorGenerator : MonoBehaviour {
                 GameObject jumper1 = Instantiate(Jumper1Prefab) as GameObject;
                 //位置決定
                 jumper1.transform.position = new Vector3(jumperPosx, createPosy, startPos + createPos);
+ 
                 //transforemからrotationを参照し、角度をランダム決定
                 float rotationX = Random.Range(-35f, -15f);
                 jumper1.transform.rotation = Quaternion.Euler(rotationX, 0, 0);
@@ -62,7 +63,7 @@ public class FloorGenerator : MonoBehaviour {
                 {
                     GameObject SUI = Instantiate(speedUpItemPrefab) as GameObject;
                     //位置決定
-                    SUI.transform.position = new Vector3(jumperPosx, createPosy+5f, startPos + createPos+10f);
+                    SUI.transform.position = new Vector3(jumperPosx, createPosy+3f, startPos + createPos+10f);
                 }
 
             }
